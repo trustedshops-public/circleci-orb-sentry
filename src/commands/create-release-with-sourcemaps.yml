@@ -1,0 +1,36 @@
+description: >
+  Create sentry release
+parameters:
+  release-name:
+    description: Name of the release
+    type: string
+    default: "${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}"
+  add-commits:
+    description: Indicates if the release should contain commits
+    type: bool
+    default: true
+  sourcemaps-folder:
+    description: Path to sourcemap folders
+    type: string
+steps:
+  - run:
+      name: Create sentry release
+      command: |
+        export SENTRY_RELEASE_VERSION="<<parameters.release-name>>"
+        echo 'export SENTRY_RELEASE_VERSION="<<parameters.release-name>>"' >> $BASH_ENV
+        
+        echo "Creating release ..."
+        sentry-cli releases new "${SENTRY_RELEASE_VERSION}"
+        
+        echo "Uploading sourcemaps ..."
+        sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameteres.sourcemaps-folder>>"
+  - when:
+      condition: <<parameters.add-commits>>
+      steps:
+        - run:
+            name: Append commit information to sentry release
+            command: sentry-cli releases set-commits "${SENTRY_RELEASE_VERSION}" --auto
+  - run:
+      name: Finalize sentry release
+      command: |
+        sentry-cli releases finalize "${SENTRY_RELEASE_VERSION}"

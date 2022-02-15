@@ -7,8 +7,8 @@ usage:
     version: 2
     continious:
       jobs:
-        - sentry-js-sourcemap-push/job:
-            name: sentry-js-sourcemap-push
+        - sentry/job:
+            name: sentry-sourcemap-push
             filters:
               branches:
                 only: [ main ]

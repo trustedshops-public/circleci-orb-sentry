@@ -1,0 +1,8 @@
+description: >
+  Install sentry cli
+
+steps:
+  - run:
+      name: Install sentry-cli
+      command: |
+        curl -sL https://sentry.io/get-cli/ | bash
