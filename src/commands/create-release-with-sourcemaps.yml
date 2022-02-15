@@ -30,7 +30,3 @@ steps:
         - run:
             name: Append commit information to sentry release
             command: sentry-cli releases set-commits "${SENTRY_RELEASE_VERSION}" --auto
-  - run:
-      name: Finalize sentry release
-      command: |
-        sentry-cli releases finalize "${SENTRY_RELEASE_VERSION}"
