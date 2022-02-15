@@ -7,7 +7,7 @@ parameters:
     default: "${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}"
   add-commits:
     description: Indicates if the release should contain commits
-    type: bool
+    type: boolean
     default: true
   sourcemaps-folder:
     description: Path to sourcemap folders
@@ -18,10 +18,10 @@ steps:
       command: |
         export SENTRY_RELEASE_VERSION="<<parameters.release-name>>"
         echo 'export SENTRY_RELEASE_VERSION="<<parameters.release-name>>"' >> $BASH_ENV
-        
+
         echo "Creating release ..."
         sentry-cli releases new "${SENTRY_RELEASE_VERSION}"
-        
+
         echo "Uploading sourcemaps ..."
         sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameteres.sourcemaps-folder>>"
   - when:
