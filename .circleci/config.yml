@@ -80,7 +80,7 @@ workflows:
       - publish-dev:
           <<: *require_tests
           context:
-            - aws-circleci-orb-deploy-private
+            - circleci-orbs
       - publish:
           <<: *require_tests
           <<: *filter_tags
