@@ -3,7 +3,7 @@ usage:
   version: 2.1
   orbs:
     sentry-js-sourcemap-push: trustedshops-public/sentry-js-sourcemap-push@<version>
-    version: 2.1
+    version: "2.1"
     jobs:
       deploy:
         environment:
