@@ -85,7 +85,7 @@ workflows:
           <<: *require_tests
           <<: *filter_tags
           context:
-            - aws-circleci-orb-deploy-private
+            - circleci-orbs
       - semantic-release/with-changelog-github-config:
           name: semantic-release
           <<: *require_tests
