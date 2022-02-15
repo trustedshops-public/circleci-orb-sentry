@@ -23,7 +23,7 @@ steps:
         sentry-cli releases new "${SENTRY_RELEASE_VERSION}"
 
         echo "Uploading sourcemaps ..."
-        sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameteres.sourcemaps-folder>>"
+        sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameters.sourcemaps-folder>>"
   - when:
       condition: <<parameters.add-commits>>
       steps:
