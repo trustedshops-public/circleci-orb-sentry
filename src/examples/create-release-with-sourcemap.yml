@@ -3,7 +3,6 @@ usage:
   version: 2.1
   orbs:
     sentry-js-sourcemap-push: trustedshops-public/sentry-js-sourcemap-push@<version>
-  workflows:
     version: 2
     jobs:
       deploy:
@@ -20,9 +19,10 @@ usage:
                 - run:
                     name: Run important deployment
                     command: echo "Deploying ..."
-    continious:
-      jobs:
-        - deploy:
-            filters:
-              branches:
-                only: [ main ]
+    workflows:
+      continious:
+        jobs:
+          - deploy:
+              filters:
+                branches:
+                  only: [ main ]
