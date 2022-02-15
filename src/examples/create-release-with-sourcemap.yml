@@ -1,0 +1,28 @@
+description: Create release with sourcemaps
+usage:
+  version: 2.1
+  orbs:
+    sentry-js-sourcemap-push: trustedshops-public/sentry-js-sourcemap-push@<version>
+  workflows:
+    version: 2
+    jobs:
+      deploy:
+        environment:
+          SENTRY_ORG: my-cool-company
+          SENTRY_PROJECT: awesome-frontend-project
+        docker:
+          - image: cimg/node:17.5.0
+        steps:
+          - sentry/run-release-with-sourcemaps:
+              sourcemaps-folder: dist/
+              add-commits: false
+              steps:
+                - run:
+                    name: Run important deployment
+                    command: echo "Deploying ..."
+    continious:
+      jobs:
+        - deploy:
+            filters:
+              branches:
+                only: [ main ]
