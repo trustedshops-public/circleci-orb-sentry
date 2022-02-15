@@ -1,4 +1,4 @@
-# Contributing to our CircleCI orb sentry-js-sourcemap-push
+# Contributing to our CircleCI orb sentry
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 

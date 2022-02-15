@@ -1,0 +1,12 @@
+description: >
+  Finalize sentry release
+parameters:
+  release-name:
+    description: Name of the release
+    type: string
+    default: "${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}"
+steps:
+  - run:
+      name: Finalize sentry release
+      command: |
+        sentry-cli releases finalize "<<parameters.release-name>>"

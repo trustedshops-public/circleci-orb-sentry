@@ -55,14 +55,14 @@ jobs:
     executor: circleci-cli/default
     steps:
       - upload_for_publish:
-          orb-name: sentry-js-sourcemap-push
+          orb-name: sentry
           orb-slug: trustedshops-public
           orb-version: dev:${CIRCLE_SHA1}
   publish:
     executor: circleci-cli/default
     steps:
       - upload_for_publish:
-          orb-name: sentry-js-sourcemap-push
+          orb-name: sentry
           orb-slug: trustedshops-public
           orb-version: ${CIRCLE_TAG}
 
@@ -80,7 +80,7 @@ workflows:
       - publish-dev:
           <<: *require_tests
           context:
-            - aws-circleci-orb-deploy-private
+            - circleci-orbs
       - publish:
           <<: *require_tests
           <<: *filter_tags

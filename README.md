@@ -1,9 +1,9 @@
-circleci-orb-sentry-js-sourcemap-push
+circleci-orb-sentry
 ===
 [![pre-commit](https://img.shields.io/badge/%E2%9A%93%20%20pre--commit-enabled-success)](https://pre-commit.com/)
-[![CircleCI Build Status](https://circleci.com/gh/trustedshops/circleci-orb-sentry-js-sourcemap-push.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/trustedshops/circleci-orb-sentry-js-sourcemap-push)
+[![CircleCI Build Status](https://circleci.com/gh/trustedshops/circleci-orb-sentry.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/trustedshops/circleci-orb-sentry)
 
-CircleCI orb sentry-js-sourcemap-push
+CircleCI orb sentry
 
 ## Resources
 
