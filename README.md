@@ -2,12 +2,13 @@ circleci-orb-sentry
 ===
 [![pre-commit](https://img.shields.io/badge/%E2%9A%93%20%20pre--commit-enabled-success)](https://pre-commit.com/)
 [![CircleCI Build Status](https://circleci.com/gh/trustedshops-public/circleci-orb-sentry.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/trustedshops-public/circleci-orb-sentry)
+[![CircleCI Orb Version](https://badges.circleci.com/orbs/trustedshops-public/sentry.svg)](https://circleci.com/orbs/registry/orb/trustedshops-public/sentry)
 
 CircleCI orb sentry
 
 ## Resources
 
-[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/trustedshops-public/sentry-js-sourcemap-push) - The official registry page of this
+[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/trustedshops-public/sentry) - The official registry page of this
 orb for all versions, executors, commands, and jobs described.
 
 [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using and creating
