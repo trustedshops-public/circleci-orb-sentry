@@ -15,12 +15,17 @@ parameters:
   steps:
     description: Steps to run
     type: steps
+  upload-sourcemaps-args:
+    description: Additional arguments for uploading sourcemaps
+    type: string
+    default: ""
 steps:
   - install-cli
   - create-release-with-sourcemaps:
       release-name: <<parameters.release-name>>
       add-commits: <<parameters.add-commits>>
       sourcemaps-folder: <<parameters.sourcemaps-folder>>
+      upload-sourcemaps-args: <<parameters.upload-sourcemaps-args>>
   - <<parameters.steps>>
   - finalize-release:
       release-name: <<parameters.release-name>>
