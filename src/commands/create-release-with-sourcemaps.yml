@@ -12,6 +12,10 @@ parameters:
   sourcemaps-folder:
     description: Path to sourcemap folders
     type: string
+  upload-sourcemaps-args:
+    description: Additional arguments for uploading sourcemaps
+    type: string
+    default: ""
 steps:
   - run:
       name: Create sentry release
@@ -23,7 +27,7 @@ steps:
         sentry-cli releases new "${SENTRY_RELEASE_VERSION}"
 
         echo "Uploading sourcemaps ..."
-        sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameters.sourcemaps-folder>>"
+        sentry-cli releases files "${SENTRY_RELEASE_VERSION}" upload-sourcemaps "<<parameters.sourcemaps-folder>>" <<parameters.upload-sourcemaps-args>>
   - when:
       condition: <<parameters.add-commits>>
       steps:
