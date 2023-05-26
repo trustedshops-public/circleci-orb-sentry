@@ -1,31 +1,31 @@
 description: >
   Release with sourcemaps
 parameters:
-  release-name:
+  release_name:
     description: Name of the release
     type: string
     default: "${CIRCLE_SHA1}-${CIRCLE_BUILD_NUM}"
-  add-commits:
+  add_commits:
     description: Indicates if the release should contain commits
     type: boolean
     default: true
-  sourcemaps-folder:
+  sourcemaps_folder:
     description: Path to sourcemap folders
     type: string
   steps:
     description: Steps to run
     type: steps
-  upload-sourcemaps-args:
+  upload_sourcemaps_args:
     description: Additional arguments for uploading sourcemaps
     type: string
     default: ""
 steps:
-  - install-cli
-  - create-release-with-sourcemaps:
-      release-name: <<parameters.release-name>>
-      add-commits: <<parameters.add-commits>>
-      sourcemaps-folder: <<parameters.sourcemaps-folder>>
-      upload-sourcemaps-args: <<parameters.upload-sourcemaps-args>>
+  - install_cli
+  - create_release_with_sourcemaps:
+      release_name: <<parameters.release_name>>
+      add_commits: <<parameters.add_commits>>
+      sourcemaps_folder: <<parameters.sourcemaps_folder>>
+      upload_sourcemaps_args: <<parameters.upload_sourcemaps_args>>
   - <<parameters.steps>>
-  - finalize-release:
-      release-name: <<parameters.release-name>>
+  - finalize_release:
+      release_name: <<parameters.release_name>>
