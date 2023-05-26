@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/trustedshops-public/circleci-orb-sentry/compare/1.3.0...2.0.0) (2023-05-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Migrate to orb tools v12 (#12)
+
+### Code Refactoring
+
+* Migrate to orb tools v12 ([#12](https://github.com/trustedshops-public/circleci-orb-sentry/issues/12)) ([551447b](https://github.com/trustedshops-public/circleci-orb-sentry/commit/551447b7c314478232e481782e6577610a080bbc))
+
 # [1.3.0](https://github.com/trustedshops-public/circleci-orb-sentry/compare/1.2.0...1.3.0) (2022-02-16)
 
 
